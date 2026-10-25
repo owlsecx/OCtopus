@@ -18,13 +18,18 @@
 
 ## 📌 Overview
 
-Protocol Analyzer & Base64 Decoder
+OCtopus is a tactical traffic dissector and credential-oriented protocol hunter for authorised network monitoring. It inspects live interfaces or PCAPs, highlights interesting protocol behaviour, and can export structured results for later review. Built for defensive capture analysis rather than offensive exploitation.
 
 ---
 
 ## ✨ Features
 
-- Tactical protocol analysis, credential dissection and Base64/multi-codec decoding
+- Live interface capture and offline PCAP read/write workflows
+- Protocol-focused dissection with optional protocol filters
+- Credential and sensitive-material oriented hunting in traffic
+- JSON and other export paths with configurable output location
+- Optional GeoIP enrichment and deduplication TTL controls
+- Quiet/verbose modes for lab capture and operator terminals
 
 ---
 
@@ -38,7 +43,10 @@ Protocol Analyzer & Base64 Decoder
 ## 🚀 Usage
 
 ```bash
-./OCtopus
+./OCtopus -i eth0
+./OCtopus --pcap capture.pcap --json --out findings.json
+./OCtopus -i eth0 --write-pcap out.pcap --protocols http,dns
+./OCtopus --help
 ```
 
 ---
